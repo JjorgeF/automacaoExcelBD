@@ -8,6 +8,12 @@ Uma automação em Python desenvolvida para extrair a estrutura completa de um b
 
 O script varre todas as tabelas do banco de dados, extraindo detalhes de colunas, tipos de dados, chaves primárias (PK), chaves estrangeiras (FK) e índices, separando cada tabela em uma aba (sheet) dedicada no arquivo Excel. Ideal para criar dicionários de dados ou auditorias de estrutura rapidamente.
 
+## 🔐 Configuração de Segurança
+Este projeto utiliza variáveis de ambiente para gerir credenciais. 
+1. Renomeie o arquivo `.env.example` para `.env`.
+2. Preencha com as suas credenciais de banco de dados.
+*O arquivo `.env` está no .gitignore e nunca deve ser enviado para o repositório.*
+
 ## ✨ Funcionalidades
 
 * **Mapeamento Automático:** Identifica todas as tabelas base (`BASE TABLE`) do banco de dados especificado.
