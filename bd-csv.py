@@ -1,12 +1,14 @@
 import pyodbc
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
 # armazenei os dados em variáveis, por conta de erro na conexão com o banco
-server = '*****' # aqui pode ser informado o nome do servidor ou o IP
-database = 'AREAS' # informar o BD que deseja executar a extração
-username = '*****' # o usuário
-password = '*****' # a senha
-driver_name = '{ODBC Driver 17 for SQL Server}' # informar o driver do banco | Procure pelo seu BD + Driver
+server = os.getenv('DB_SERVER') # aqui pode ser informado o nome do servidor ou o IP
+database = os.getenv('DB_DATABASE') # informar o BD que deseja executar a extração
+username = os.getenv('DB_USERNAME') # o usuário
+password = os.getenv('DB_PASSWORD') # a senha
+driver_name = os.getenv('DB_DRIVER') #'{ODBC Driver 17 for SQL Server (usada no projeto}' informar o driver do banco | Procure pelo seu BD + Driver
 conexao_str = f'DRIVER={driver_name};SERVER={server};DATABASE={database};UID={username};PWD={password}'
 
 # dicionários para armazenar os DataFrames de cada tipo de consulta
